@@ -16,11 +16,12 @@ jobs:
     - name: Install
       run: npm --prefix web install
     - name: Build
+      if: success()
       run: npm --prefix web run build
     - name: Deploy
+      if: success()
       uses: crazy-max/ghaction-github-pages@v0.1.0
       env:
         GITHUB_PAT: ${{ secrets.GH_PAT }}
       with:
-        target_branch: gh-pages
         build_dir: web/dist
