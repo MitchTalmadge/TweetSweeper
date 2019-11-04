@@ -18,3 +18,5 @@ jobs:
       uses: maxheld83/ghpages@v0.1.2
       env:
         BUILD_DIR: web/dist
+      with:
+        repo-token: ${{ secrets.GH_PAT }}
