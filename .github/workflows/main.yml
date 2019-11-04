@@ -1,4 +1,4 @@
-name: CI
+name: Web Frontend
 
 on: [push]
 
@@ -10,7 +10,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1.1.0
-    - name: Build Web
-      run: |
-        npm --prefix web install
-        npm --prefix web run build
+    - name: Install
+      run: npm --prefix web install
+    - name: Build
+      run: npm --prefix web run build
+    - name: Deploy
+    - uses: maxheld83/ghpages@v0.1.2
+      env:
+        BUILD_DIR: web/dist
