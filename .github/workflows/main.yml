@@ -11,4 +11,4 @@ jobs:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1.1.0
     - name: Build Web
-      run: npm --prefix /web run build
+      run: npm --prefix web run build
