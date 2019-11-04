@@ -20,7 +20,7 @@ jobs:
       run: npm --prefix web run build
     - name: Deploy
       if: success()
-      uses: crazy-max/ghaction-github-pages@v0.1.0
+      uses: crazy-max/ghaction-github-pages@v1.0
       env:
         GITHUB_PAT: ${{ secrets.GH_PAT }}
       with:
