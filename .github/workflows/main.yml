@@ -15,6 +15,6 @@ jobs:
     - name: Build
       run: npm --prefix web run build
     - name: Deploy
-    - uses: maxheld83/ghpages@v0.1.2
+      uses: maxheld83/ghpages@v0.1.2
       env:
         BUILD_DIR: web/dist
