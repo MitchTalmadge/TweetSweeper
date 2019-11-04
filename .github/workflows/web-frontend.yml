@@ -1,6 +1,9 @@
 name: Web Frontend
 
-on: [push]
+on: 
+  push:
+    branches: 
+      - master
 
 jobs:
   build:
@@ -15,8 +18,9 @@ jobs:
     - name: Build
       run: npm --prefix web run build
     - name: Deploy
-      uses: maxheld83/ghpages@v0.1.2
+      uses: crazy-max/ghaction-github-pages@v0.1.0
       env:
-        BUILD_DIR: web/dist
+        GITHUB_PAT: ${{ secrets.GH_PAT }}
       with:
-        repo-token: ${{ secrets.GH_PAT }}
+        target_branch: gh-pages
+        build_dir: web/dist
