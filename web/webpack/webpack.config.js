@@ -11,7 +11,7 @@ module.exports = {
     entry: path.resolve(SrcDir, 'main.ts'),
     output: {
         path: DistDir,
-        publicPath: '/',
+        publicPath: '/CleanTweets/',
         filename: 'static/js/[name].bundle.js',
         chunkFilename: 'static/js/[name]-[hash].chunk.js'
     },
